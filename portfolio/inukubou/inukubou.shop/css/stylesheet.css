@@ -1,0 +1,599 @@
+
+* {
+        margin: 0px;
+        padding: 0px;
+
+    box-sizing: border-box;
+    }
+
+* a{
+    color: inherit;
+    text-decoration:none;
+} 
+
+::before , ::after {
+	box-sizing: inherit;
+}
+button {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: inherit;
+	vertical-align: middle;
+	text-align: inherit;
+	font: inherit;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+@media (min-width: 414px) {
+  .menu-flexbox {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: 350px;
+   
+  }
+
+  .header-list {
+    position: fixed;
+    right: -70%;
+    width: 70%;
+    height: 100vh;
+    margin-left: auto;
+    /* メニューを縦に */
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    background-color: rgba(167, 148, 58, 0.7);
+    transition: .3s;
+  }
+
+  .btn {
+    /* ボタンの配置位置  */
+    position: fixed;
+    top: 32px;
+    right: 16px;
+    /* ボタンの大きさ  */
+    width: 48px;
+    height: 48px;
+    /* 最前面に */
+    z-index: 10;
+    
+  }
+
+  /***** 真ん中のバーガー線 *****/
+.btn-line {
+	display: block;
+	position: relative;  /* バーガー線の位置基準として設定 */
+	width: 100%;  /* 線の長さと高さ */
+	height: 4px;
+	background-color: #d6d5d5;  /* バーガー線の色 */
+	transition: .2s;
+}
+
+/****** 上下のバーガー線 *****/
+.btn-line::before,
+.btn-line::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #d6d5d5;
+  transition: .5s;
+}
+.btn-line::before {
+  /* 上の線の位置 */
+  transform: translateY(-16px);
+}
+.btn-line::after {
+  /* 下の線の位置 */
+  transform: translateY(16px);
+}
+
+.header-list.open {
+  right: 0;
+  position: absolute;
+      right: 0;
+      position: fixed;
+      overflow-y: auto;
+}
+
+/***** メニューオープン時 *****/
+.btn-line.open {
+	background-color: transparent;  	/* 真ん中の線を透明に */
+}
+.btn-line.open::before ,
+.btn-line.open::after {
+	content: "";
+	background-color: #333;  /* 上下の線の色を変える */
+	transition: .2s;
+}
+.btn-line.open::before {
+	transform: rotate(45deg);  /* 上の線を傾ける */
+}
+.btn-line.open::after {
+	transform: rotate(-45deg);  /* 下の線を傾ける */
+}
+
+  .menu-flexbox {
+   
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+            justify-content: center;
+            
+  }
+
+  .menu-contents {
+    width: 300px;
+    font-size:15px;
+}
+
+  .menu {
+    padding-bottom:53px;
+  }
+
+  .price-table {
+    width:350px;
+    display: block;
+    white-space: nowrap;
+    text-align:center;
+    table-layout: fixed;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1029px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .menu-flexbox {
+    width:auto;
+    flex-direction: row;
+    justify-content:space-around;
+  }
+
+  .btn {
+		display: none;
+	}
+	
+}
+
+@media (min-width: 1030px) {
+  .container {
+    max-width: 970px;
+  }
+
+  .menu-flexbox {
+
+    flex-direction: row;
+    justify-content:space-around;
+  }
+}
+    
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+/* ヘッダー */
+
+    header {
+        background-color: #E4E1E1;
+        height: 60px;
+        color: #636363;
+        overflow: hidden;
+        }
+
+    .logo-header {
+        height: 60px;
+        display: inline-block;
+        float:left;
+        padding-right: 20px;
+    }
+    
+    .header-list {
+        height: 60px;
+        color: #636363;
+        font-size: 12px;
+        display: flex;
+        margin-left: auto;
+        
+        font-family: "futura-pt", sans-serif;
+        font-weight: 500;
+        font-style: normal; 
+    }
+
+    .header-list ul {
+        display:flex;
+        justify-content: flex-end;
+        align-items:center;
+        list-style: none;
+        flex-direction: row;
+    }
+
+    .menu-list {
+        padding: 0 40px;
+        height:15px;
+    }
+
+    .menu-list a{
+        color: inherit;
+        text-decoration:none;
+    }
+
+    .menu-list :hover {
+        color: #8FB5C6;
+        transition:color 0.5s;
+    }
+    .menu-list :active {
+        color: #E4E1E1;
+    }
+
+
+    .instagram{
+        transition:0.3s;
+        text-align:center;
+    }
+    .instagram img{
+        width:30px;
+        padding-left: 40px;
+        padding-top:5px;
+    }
+
+    .instagram:hover{
+        opacity:0.3;
+        display:block;
+    }
+  
+/* トップ */   
+
+    .top-wrapper {
+        height: 460px;
+        
+    
+    }
+/* スライダー全体 */
+.slider{
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 460px;
+    background-color: #fff;
+  }
+  
+  /* スライダー画像 */
+  .slider .image{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  /*
+    ①スライド画像
+    表示する画像を定義
+  */
+  .slider .image:nth-of-type(1){
+    background-image: url(../img/image1.jpg);
+  }
+  .slider .image:nth-of-type(2){
+    animation-delay: 7s;
+    background-image: url(../img/image2.jpg);
+  }
+  .slider .image:nth-of-type(3){
+    animation-delay: 12s;
+    background-image: url(../img/image3.jpg);
+  }
+  
+  /*
+    ②アニメーション設定
+    animation-durationのみ変更
+  */
+  .slider .image{
+    animation-name: anime;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 19s;  /* ①で設定したanimation-delayを合計を挿入 */
+  
+  }
+  
+  /* アニメーション定義 */
+  @keyframes anime {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+
+    .top-wrapper-logo {
+        padding: 50px 0;
+        position:relative;
+        z-index: 30;
+        text-align: center;
+        margin: auto;
+        display: block;
+    }
+
+    .about-wrapper {
+        color:#636363;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        text-align:center;
+        margin: 0 auto;
+        max-width: 890px;
+        padding-bottom:53px;
+
+    }
+
+    .about-copy {
+        margin: 47px;
+    }
+
+    .about-wrapper h1 {
+        font-size:24px;
+        line-height: 39px;
+        font-weight: 300;
+    }
+
+    .about-wrapper p {
+        font-size:12px;
+        line-height: 23px;
+
+    }
+
+    .about-message {
+        display: inline-block;
+        padding-bottom: 58px;
+        text-align: left;
+    }
+
+
+    .contents-menu {
+        font-family: 'Island Moments', cursive;
+        font-size: 24px;
+        color:#636363;
+        
+    }
+
+    .contents-menu:hover {
+        color: #E4E1E1;
+    }
+
+    .button-01 {
+        padding: 16px 16px 16px 40px;
+    }
+
+    .more {
+        text-align:right;
+        background-position: right 130px center;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        background-image:url(../img/arrow-right.svg)
+
+    }
+
+    /* メニュータイトル */
+    .menu-title {
+        text-align: center;
+        font-size: 32px;
+        font-family: 'Island Moments', cursive;
+        padding-bottom: 53px;
+    }
+
+    /* メニュー　*/
+
+    .menu-wrapper {
+        color:#636363;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        margin-bottom: 149px;
+    }
+
+    .menu-flexbox {
+        display: flex;
+    }
+
+    .menu {
+        width:300px;
+    }
+
+    .menu-icon {
+        margin: auto;
+        display: block;
+        text-align: center;
+        padding-bottom: 32px;
+    
+    }
+
+    .menu-contents {
+        width: 300px;
+        font-size:15px;
+        text-align:center;
+        display: block;
+        padding-bottom: 20px;
+    }
+
+    .txt-contents ul {
+        padding-left: 15px;
+
+    }
+
+    .txt-contents li {
+        list-style-type: none;
+        list-style-position: inside;
+        position: relative;
+        width: 300px;
+    }
+
+    li:before {
+        content: '';
+        width: 2px;
+        height: 2px;
+        display: block;
+        border-radius: 100%;
+        background: #636363;
+        position: absolute;
+        left: -10px;
+        top: 12px;
+    }
+
+        
+
+    .txt-contents{
+        width: 300px;
+        font-size: 12px;
+        line-height: 25px;
+    }
+      
+
+      .price-wrapper {
+        margin-bottom: 105px;
+      }
+
+      .price-table {
+       width: 950px;
+        border-collapse: collapse;
+        border: solid 1px #B3B3B3;
+        color:#636363;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+        text-align:center;
+        table-layout: fixed;
+      }
+
+      .price-table table th {
+        background-color: #ACA4A4;
+        color: #FFF;
+        font-weight: 700;
+      }
+
+      .price-table table td {
+        font-weight: 400;
+      }
+
+      .price-table table {
+        text-align: center;
+        
+      }
+
+      .price-table table th, table td {
+        border: solid 0.5px #B3B3B3;
+        padding: 13.5px;
+      }
+
+      .photo-wrapper {
+        margin-bottom: 105px;
+      }
+
+      
+      
+
+      .access-wrapper {
+        margin-bottom: 120px;
+      }
+
+      .access-map {
+        text-align: center;
+      }
+
+      .access-text {
+        text-align: center;
+        padding-top: 50px;
+      }
+
+      .access-text p {
+        color:#636363;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        font-size: 12px;
+        line-height: 25px;
+      }
+
+      .reserve-container {
+        background-image: url(../img/reserve-background.jpg);
+        background-size: cover;
+        height: 367px;
+        color: #FFF;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: 0.2em;
+      }
+
+      .reserve-container-opacity {
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 367px;
+    }
+
+      .reserve-text {
+        font-weight: 300;
+        padding-top: 80px;
+      }
+
+      .reserve-btn {
+        border-radius: 33px;
+        border: 1px solid #FFF;
+        max-width: 550px;
+        padding: 30px 110px;
+        display: inline-block;
+        text-align: center;
+
+        font-family: "futura-pt", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        letter-spacing: normal;
+        font-size: 40px;
+        margin:28px;
+        box-sizing: border-box;
+        
+        background-image:url("../img/phone.svg");
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        background-position: left 110px top 50%;
+      }
+
+      .phone {
+        margin-right: 66px;
+      }
+
+      .reserve-btn:hover {
+        opacity:0.8;
+      }
+
+
+      footer {
+        height:300px;
+        background-color: #E4E1E1;
+        text-align: center;
+        color:#B3B3B3;       
+        font-family: "futura-pt", sans-serif;
+        font-size: 10px;
+        }
+
+    footer img {
+        margin-top:80px;
+    }
+
