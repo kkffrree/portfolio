@@ -1,0 +1,21 @@
+CREATE TABLE members (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT UNIQUE,
+    password TEXT,
+    picture TEXT,
+    created DATETIME,
+    modified DATETIME
+);
+
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    member_id INTEGER,
+    title TEXT,
+    content TEXT,
+    created DATETIME,
+    modified DATETIME,
+    FOREIGN KEY(member_id) REFERENCES members(id)
+);
+
+.exit
