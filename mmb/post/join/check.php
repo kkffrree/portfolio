@@ -9,7 +9,7 @@ session_set_cookie_params([
     'samesite' => 'Lax'
 ]);
 session_start();
-require('../../dbconnect.php');
+require(__DIR__ . '/../dbconnect.php');
 
 // Redirect to input page if session data is missing
 if (empty($_SESSION['join'])) {
