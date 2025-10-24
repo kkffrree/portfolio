@@ -1,8 +1,8 @@
 <?php
-require('../../dbconnect.php');
-ini_set('session.cookie_samesite', 'None'); // POSTでも送信可能に
-ini_set('session.cookie_secure', 'Off');    // HTTPSじゃない場合はOff
-ob_start();
+ob_start(); // 出力バッファを開始して警告を防ぐ
+require(__DIR__ . '/../../dbconnect.php');
+ini_set('session.cookie_samesite', 'Lax');
+ini_set('session.cookie_secure', 'Off');
 session_start();
 
 $error = [];
