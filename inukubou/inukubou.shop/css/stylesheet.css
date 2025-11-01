@@ -409,6 +409,7 @@ button {
         color:#636363;
         font-family: 'Zen Kaku Gothic New', sans-serif;
         margin-bottom: 149px;
+        margin: 0 auto;
     }
 
     .menu-flexbox {
