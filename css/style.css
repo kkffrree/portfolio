@@ -177,7 +177,7 @@ li {
 }
 
 .works-item:hover {
-  opacity: .9;
+  opacity: .3;
 }
 
 .works-item:nth-of-type(3n) {
@@ -186,6 +186,7 @@ li {
 
 .works-img img {
   border: 1px solid #e6e6e6;
+  opacity: .9;
 }
 
 .works-name {
